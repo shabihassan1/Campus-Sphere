@@ -69,15 +69,3 @@ npm run dev
 > Ensure PostgreSQL is running and `DATABASE_URL` is properly set in `.env`.
 
 
-## 📝 Next Goals (Sprint 2)
-
-- Event listing and creation
-- Submit feedback to societies
-- Admin/president dashboards
-- Unit & integration testing
-- Role-based route protection
-
-
-## 📌 Project Status
-
-> **Campus Sphere – Sprint 1 is complete.** Core flows like registration, login, society joining, and API/backend integration are fully functional and tested locally.
