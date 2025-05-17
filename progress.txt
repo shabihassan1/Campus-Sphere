@@ -1,0 +1,83 @@
+# Progress Log - Campus Sphere
+Date: 17/05/2025
+
+## Context
+Campus Sphere is a full-stack student society engagement platform (FYP project) built by two BSCS students at FAST-NUCES Islamabad. The goal is to enable students to register/login, join societies, view events, and give feedback, making campus life more interactive and organized.
+- **Stack:** React (Vite, Tailwind) frontend, NestJS backend, PostgreSQL database, JWT authentication.
+
+## Implemented User Stories
+- As a student, I can register with my email, password, name, and a security question/answer.
+- As a student, I can log in securely using my email and password.
+- As a student, I can reset my password using my security question if I forget it.
+- As a student, I can browse a list of all societies.
+- As a student, I can join societies (with confirmation and correct member count).
+- As a student, I can create a new society (becoming president and first member).
+- As a student, I can see a clean, modern UI for societies, with clear member counts and action buttons.
+- As a student, I can browse a list of all events.
+- As a student, I can join or leave events.
+- As a student, I can create a new event (if allowed).
+- As a student, I can submit feedback for a society or event, including a message and rating.
+- As a student, I can view all feedback, or filter feedback by society or event.
+- As a student, my feedback is associated with my user account and visible in the UI.
+- As a user, I see clear error and success messages for all major actions (register, login, feedback, etc).
+- As a society president, I can edit my society's details and view/remove members (president-only UI).
+- As a student, I can always see the member count for any society, but only the president can see/edit members.
+
+## Remaining User Stories
+- As an admin, I can manage users, societies, events, and feedback (admin dashboard).
+- As a user, I can edit or delete my feedback.
+- As a user, I can update my profile information (name, password, security question, etc).
+- As a user, I can see paginated or sorted lists for societies, events, and feedback.
+- As a user, I can receive notifications or emails for important actions (optional).
+- As a user, I can see improved UI/UX and accessibility features.
+
+## Initial Work
+- Bootstrapped frontend with Vite, React, and Tailwind (Lovable AI scaffold).
+- Set up modular `authService` for login/register in frontend.
+- Created registration and login forms with real API calls.
+- Initialized NestJS backend, set up PostgreSQL with TypeORM, and created User entity.
+- Implemented JWT authentication and user registration/login endpoints.
+- Configured CORS and input validation (frontend and backend).
+
+## Progress & Features Implemented
+- **Auth Module:**
+  - JWT-based authentication (register/login) fully integrated (frontend & backend).
+  - Security question-based password reset (no email required).
+- **Societies Module:**
+  - Backend: Society entity, CRUD, join/leave, user-society relations, president field.
+  - Frontend: List, create, join societies, clean UI, member count, president-only edit/members, confirmation dialogs.
+- **Events Module:**
+  - Backend: Event entity (linked to society), CRUD, join/leave, user-event relations.
+  - Frontend: List, create, join/leave events, show society, date, location, attendees.
+- **Feedback Module:**
+  - Backend: Feedback entity (user, message, rating, society/event target), DTO, service, controller, module registered.
+  - Frontend: Feedback form (select society/event, message, rating), feedback list component, API service.
+  - Feedback creation now uses real user data from JWT (no mock user).
+  - Feedback can be viewed and filtered in the UI by society/event or as a full list.
+
+## Issues Faced & Overcome
+- **TypeORM/TypeScript relation errors** when adding user/society/event to Feedback entity (circular import/type resolution):
+  - Resolved by using string-based relation decorators (e.g., `@ManyToOne('User', ...)`).
+  - Incremental, test-driven debugging and rebuilding of entity/service/controller.
+- **Type error in feedback service** (`No overload matches this call...`):
+  - Fixed by ensuring correct DTOs, entity definitions, and repository usage.
+- **CORS and validation issues** during early integration:
+  - Fixed by updating backend config and using class-validator DTOs.
+- **UI/UX issues:**
+  - Improved societies list layout, spacing, and button logic for a modern, user-friendly experience.
+  - Fixed member count, join/edit/member button logic, and president-only permissions.
+
+## Current Status
+- All major modules (auth, societies, events, feedback) are integrated and working end-to-end.
+- Societies UI is clean, modern, and fully functional for both students and presidents.
+- Feedback creation and retrieval work with real user association.
+- UI allows filtering feedback by society/event or viewing all feedback.
+- No major blockers remain.
+
+## Next Steps
+- Polish UI/UX for feedback and other modules.
+- Add optional features: admin views/user roles, profile editing, feedback editing/deletion, pagination, notifications.
+- Continue daily testing and incremental improvements.
+
+---
+*Update this file daily to track progress, blockers, and next steps.* 
