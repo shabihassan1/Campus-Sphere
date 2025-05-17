@@ -12,9 +12,7 @@
   <h3>A modern platform for university society management and student engagement</h3>
 </div>
 
-<p align="center">
-  <img src="screenshot.png" alt="Campus Sphere Screenshot" width="800" />
-</p>
+![Uploading image.png…]()
 
 ## 📋 Table of Contents
 
