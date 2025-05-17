@@ -286,6 +286,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ---
 
 <div align="center">
-  <p>Developed with ❤️ by BSCS students at FAST-NUCES Islamabad</p>
+  <p>Developed by BSCS students at FAST-NUCES Islamabad</p>
   <p>© 2025 Campus Sphere</p>
 </div>
