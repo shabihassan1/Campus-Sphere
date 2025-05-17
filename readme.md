@@ -12,7 +12,7 @@
   <h3>A modern platform for university society management and student engagement</h3>
 </div>
 
-![Uploading image.png…]()
+![image](https://github.com/user-attachments/assets/7f92f77d-aa36-4f7f-8695-4c7f2c8d3f74)
 
 ## 📋 Table of Contents
 
